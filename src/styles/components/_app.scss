@@ -18,3 +18,42 @@
 		line-height: 32px;
   }
 }
+
+.form__line.active .label {
+	transform: scale(0.8) translateY(0px);
+	color: #7D7D7D;
+}
+
+.section__title {
+	font-size: 36px;
+	color: #1C7982;
+	text-align: center;
+	margin-bottom: 30px;
+	position: relative;
+	z-index: 2;
+}
+
+.parallax{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	 @include media('<=tb') {
+		&-tb {
+			height: 100%;
+			& img {
+				height: 100%;
+				object-fit: cover;
+			}
+	}
+	} 
+	& img {
+		width: 100%;
+		display: block;
+	}
+	
+}
+
+
+

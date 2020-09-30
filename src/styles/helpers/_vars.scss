@@ -13,16 +13,15 @@ $defFonts: Monserrat, sans-serif, Hiragino Sans, "ヒラギノ角ゴシック", 
 YuGothic, "游ゴシック", Meiryo, "メイリオ", Verdana, "ＭＳ Ｐゴシック", sans-serif;
 
 $breakpoints: (
-  phone-xs: 375px,
-  phone: 768px,
-  tablet: 992px,
-  desktop: 1200px,
-  desktop_lg: 1400px,
+  phone: 375px,
+  tb: 768px,
+  desktop_min: 1024px,
+  desktop_lg: 1440px,
 );
 
 // wrap
-$container-p: 20px;
-$container-width: 1280px;
+$container-p: 10px;
+$container-width: 1060px;
 
 // colors
 $white: #fff;

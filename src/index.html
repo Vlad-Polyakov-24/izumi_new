@@ -25,8 +25,8 @@
 	<div class="wrapper" id="wrapper">
 		<%= _.template(require('./parts/header.html'))() %>
 		<div class="app" id="app">
-			<section id="top__link" class="top _anim-items">
-				<strong class="title__top _anim-items">
+			<section id="top__link" class="top">
+				<strong data-aos="zoom-in" class="title__top">
 					<svg width="429" height="34" viewBox="0 0 429 34" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M7.15875 33.545H0V0.454102H7.15875V33.545Z" fill="#00A7B9" />
 						<path
@@ -65,58 +65,80 @@
 							fill="#333333" />
 					</svg>
 				</strong>
-				<p class="top__subtitle _anim-show">Развивайте онлайн-присутствие своего бизнеса!<br>
+				<p data-aos="fade-up" class="top__subtitle">Развивайте онлайн-присутствие своего бизнеса!<br>
 					Мы сделаем вам сайт и уже завтра вы сможете<br>продать ваши товары или услуги!<br>
 					Мы сделаем для Вас online рекламу!
-				<p class="top__text _anim-show">Расскажите о своих задачах и мы обсудим их решение в удобное вам время</p>
-				<a href="#contacts__link" class="top__btn header__button _anim-show"><span>contact us</span></a>
+				<p class="top__text">Расскажите о своих задачах и мы обсудим их решение в удобное вам время</p>
+				<a href="#contacts__link" class="button btn-center"><span>contact us</span></a>
 			</section>
-			<section class="galery _anim-items">
-				<div class="swiper-container _anim-show">
-					<ul class="swiper-wrapper">
-						<li class="swiper-slide">
-							<a href="/images/project/1.jpg" data-fancybox="images"><img src="/images/project/1.jpg" alt=""></a>
-							<p>E-commerce</p>
-						</li>
-						<li class="swiper-slide">
-							<a href="/images/project/2.jpg" data-fancybox="images"><img src="/images/project/2.jpg" alt=""></a>
-							<p>Landing Page</p>
-						</li>
-						<li class="swiper-slide">
-							<a href="/images/project/3.jpg" data-fancybox="images"><img src="/images/project/3.jpg" alt=""></a>
-							<p>Landing Page</p>
-						</li>
-						<li class="swiper-slide">
-							<a href="/images/project/4.jpg" data-fancybox="images"><img src="/images/project/4.jpg" alt=""></a>
-							<p>E-commerce</p>
-						</li>
-						<li class="swiper-slide">
-							<a href="/images/project/5.jpg" data-fancybox="images"><img src="/images/project/5.jpg" alt=""></a>
-							<p>Blog</p>
-						</li>
-						<li class="swiper-slide">
-							<a href="/images/project/6.jpg" data-fancybox="images"><img src="/images/project/6.jpg" alt=""></a>
-							<p>E-commerce</p>
-						</li>
-						<li class="swiper-slide">
-							<a href="/images/project/7.jpg" data-fancybox="images"><img src="/images/project/7.jpg" alt=""></a>
-							<p>Landing Page</p>
-						</li>
-						<li class="swiper-slide">
-							<a href="/images/project/8.jpg" data-fancybox="images"><img src="/images/project/8.jpg" alt=""></a>
-							<p>Blog</p>
-						</li>
-						<li class="swiper-slide">
-							<a href="/images/project/2.jpg" data-fancybox="images"><img src="/images/project/2.jpg" alt=""></a>
-							<p>Blog</p>
-						</li>
-						<li class="swiper-slide">
-							<a href="/images/project/5.jpg" data-fancybox="images"><img src="/images/project/5.jpg" alt=""></a>
-							<p>Landing Page</p>
-						</li>
-					</ul>
+			<section class="galery">
+				<div class="galery__wrap">
+					<div class="swiper-container">
+						<ul data-aos="fade-up" class="swiper-wrapper">
+							<li class="swiper-slide">
+								<a href="/images/project/1.jpg" data-fancybox="images" class="swiper-image-wrap">
+									<div class="swiper-image swiper-image--1"></div>
+								</a>
+								<p>E-commerce</p>
+							</li>
+							<li class="swiper-slide">
+								<a href="/images/project/2.jpg" data-fancybox="images" class="swiper-image-wrap">
+									<div class="swiper-image swiper-image--2"></div>
+								</a>
+								<p>Landing Page</p>
+							</li>
+							<li class="swiper-slide">
+								<a href="/images/project/3.jpg" data-fancybox="images" class="swiper-image-wrap">
+									<div class="swiper-image swiper-image--3"></div>
+								</a>
+								<p>Landing Page</p>
+							</li>
+							<li class="swiper-slide">
+								<a href="/images/project/4.jpg" data-fancybox="images" class="swiper-image-wrap">
+									<div class="swiper-image swiper-image--4"></div>
+								</a>
+								<p>E-commerce</p>
+							</li>
+							<li class="swiper-slide">
+								<a href="/images/project/5.jpg" data-fancybox="images" class="swiper-image-wrap">
+									<div class="swiper-image swiper-image--5"></div>
+								</a>
+								<p>Blog</p>
+							</li>
+							<li class="swiper-slide">
+								<a href="/images/project/6.jpg" data-fancybox="images" class="swiper-image-wrap">
+									<div class="swiper-image swiper-image--6"></div>
+								</a>
+								<p>E-commerce</p>
+							</li>
+							<li class="swiper-slide">
+								<a href="/images/project/7.jpg" data-fancybox="images" class="swiper-image-wrap">
+									<div class="swiper-image swiper-image--7"></div>
+								</a>
+								<p>Landing Page</p>
+							</li>
+							<li class="swiper-slide">
+								<a href="/images/project/8.jpg" data-fancybox="images" class="swiper-image-wrap">
+									<div class="swiper-image swiper-image--8"></div>
+								</a>
+								<p>Blog</p>
+							</li>
+							<li class="swiper-slide">
+								<a href="/images/project/4.jpg" data-fancybox="images" class="swiper-image-wrap">
+									<div class="swiper-image swiper-image--4"></div>
+								</a>
+								<p>Blog</p>
+							</li>
+							<li class="swiper-slide">
+								<a href="/images/project/7.jpg" data-fancybox="images" class="swiper-image-wrap">
+									<div class="swiper-image swiper-image--7"></div>
+								</a>
+								<p>Landing Page</p>
+							</li>
+						</ul>
+					</div>
 				</div>
-				<a href="/images/project/1.jpg" class="galery__button _anim-show" data-fancybox="images">view all works</a>
+				<a href="/images/project/1.jpg" class="galery__button" data-fancybox="images">view all works</a>
 			</section>
 			<section class="services">
 				<div class="container">
@@ -172,8 +194,8 @@
 								</a>
 							</li>
 							<li id="tab-1" class="tabs__item tabs-link-4">
-								<div class="tabs__body-image">
-									<img src="/images/services/1.jpg" alt="">
+								<div class="tabs__body-image-wrap">
+									<div class="tabs__body-image tabs__img-1"></div>
 								</div>
 								<div class="tabs__body-item">
 									<h2 class="tabs__item-title">01. Discussion of the Idea</h2>
@@ -183,8 +205,8 @@
 								</div>
 							</li>
 							<li id="tab-2" class="tabs__item tabs-link-5">
-								<div class="tabs__body-image">
-									<img src="/images/services/2.jpg" alt="">
+								<div class="tabs__body-image-wrap">
+									<div class="tabs__body-image tabs__img-2"></div>
 								</div>
 								<div class="tabs__body-item">
 									<h2 class="tabs__item-title">02. creative concept</h2>
@@ -194,8 +216,8 @@
 								</div>
 							</li>
 							<li id="tab-3" class="tabs__item tabs-link-6">
-								<div class="tabs__body-image">
-									<img src="/images/services/3.jpg" alt="">
+								<div class="tabs__body-image-wrap">
+									<div class="tabs__body-image tabs__img-3"></div>
 								</div>
 								<div class="tabs__body-item">
 									<h2 class="tabs__item-title">03. production</h2>
@@ -211,38 +233,47 @@
 			<section class="why">
 				<div class="container">
 					<h2 class="section__title title__white">Why us</h2>
-					<ul class="why__list _anim-items">
-						<li class="why__link  _anim-show">
-							<img src="/images/why/ico_1.png" alt="" class="why__img">
-							<h3 class="why__title">True price</h3>
-							<p class="why__text">
-								The prices are not taken from air, each cent in project cost is strictly reasoned by tasks,
-								hourly rates, term and complexity.
-							</p>
+					<ul data-aos="fade-up" class="why__list">
+						<li class="why__list-item">
+							<div class="why__list-inner">
+								<img src="/images/why/ico_1.png" alt="" class="why__img">
+								<h3 class="why__title">True price</h3>
+								<p class="why__text">
+									The prices are not taken from air, each cent in project cost is strictly reasoned by tasks,
+									hourly rates, term and complexity.
+								</p>
+							</div>
 						</li>
-						<li class="why__link  _anim-show">
-							<img src="/images/why/ico_2.png" alt="" class="why__img">
-							<h3 class="why__title">Technical support</h3>
-							<p class="why__text">
-								Lifetime support of the finished project, at any stage of its existence. We quickly react to any
-								changes, failures and in the shortest possible time eliminate them.
-							</p>
+						<li class="why__list-item">
+							<div class="why__list-inner">
+								<img src="/images/why/ico_2.png" alt="" class="why__img">
+								<h3 class="why__title">Technical support</h3>
+								<p class="why__text">
+									Lifetime support of the finished project, at any stage of its existence. We quickly react to
+									any
+									changes, failures and in the shortest possible time eliminate them.
+								</p>
+							</div>
 						</li>
-						<li class="why__link  _anim-show">
-							<img src="/images/why/ico_3.png" alt="" class="why__img">
-							<h3 class="why__title">Guarantees</h3>
-							<p class="why__text">
-								The best guarantee is financial. If through our fault, the project has ceased to function
-								properly, we will compensate each dollar lost by you.
-							</p>
+						<li class="why__list-item">
+							<div class="why__list-inner">
+								<img src="/images/why/ico_3.png" alt="" class="why__img">
+								<h3 class="why__title">Guarantees</h3>
+								<p class="why__text">
+									The best guarantee is financial. If through our fault, the project has ceased to function
+									properly, we will compensate each dollar lost by you.
+								</p>
+							</div>
 						</li>
-						<li class="why__link  _anim-show">
-							<img src="/images/why/ico_4.png" alt="" class="why__img">
-							<h3 class="why__title">Quality product</h3>
-							<p class="why__text">
-								Our main task is the creation of a reliable product that will work quickly and safely. This
-								result can only be achieved by a team with extensive experience and we have such a team.
-							</p>
+						<li class="why__list-item">
+							<div class="why__list-inner">
+								<img src="/images/why/ico_4.png" alt="" class="why__img">
+								<h3 class="why__title">Quality product</h3>
+								<p class="why__text">
+									Our main task is the creation of a reliable product that will work quickly and safely. This
+									result can only be achieved by a team with extensive experience and we have such a team.
+								</p>
+							</div>
 						</li>
 					</ul>
 				</div>
@@ -254,95 +285,134 @@
 					<li><a href="#portfolio__tab-2" class="portfolio__tabs-link">design</a></li>
 					<li><a href="#portfolio__tab-3" class="portfolio__tabs-link">mobile app</a></li>
 				</ul>
-				<ul id="portfolio__tab-1" class="portfolio__tabs-item _anim-items">
-					<li class="portfolio__tabs-item--img anim__portfolio"><img src="/images/portfolio/portfolio_1.jpg"
-							alt=""></li>
-					<li class="portfolio__tabs-item--img anim__portfolio"><img src="/images/portfolio/portfolio_2.jpg"
-							alt=""></li>
-					<li class="portfolio__tabs-item--img anim__portfolio"><img src="/images/portfolio/portfolio_3.jpg"
-							alt=""></li>
-					<li class="portfolio__tabs-item--img anim__portfolio"><img src="/images/portfolio/portfolio_4.jpg"
-							alt=""></li>
-					<li class="portfolio__tabs-item--img anim__portfolio"><img src="/images/portfolio/portfolio_5.jpg"
-							alt=""></li>
-					<li class="portfolio__tabs-item--img anim__portfolio"><img src="/images/portfolio/portfolio_6.jpg"
-							alt=""></li>
+				<ul id="portfolio__tab-1" class="portfolio__list">
+					<li data-aos="zoom-in" class="portfolio__item">
+						<div class="portfolio__image portfolio__image-1"></div>
+					</li>
+					<li data-aos="zoom-in" class="portfolio__item">
+						<div class="portfolio__image portfolio__image-2"></div>
+					</li>
+					<li data-aos="zoom-in" class="portfolio__item">
+						<div class="portfolio__image portfolio__image-3"></div>
+					</li>
+					<li data-aos="zoom-in" class="portfolio__item">
+						<div class="portfolio__image portfolio__image-4"></div>
+					</li>
+					<li data-aos="zoom-in" class="portfolio__item">
+						<div class="portfolio__image portfolio__image-5"></div>
+					</li>
+					<li data-aos="zoom-in" class="portfolio__item">
+						<div class="portfolio__image portfolio__image-6"></div>
+					</li>
 				</ul>
-				<ul id="portfolio__tab-2" class="portfolio__tabs-item">
-					<li class="portfolio__tabs-item--img"><img src="/images/portfolio/portfolio_4.jpg" alt=""></li>
-					<li class="portfolio__tabs-item--img"><img src="/images/portfolio/portfolio_6.jpg" alt=""></li>
-					<li class="portfolio__tabs-item--img"><img src="/images/portfolio/portfolio_2.jpg" alt=""></li>
-					<li class="portfolio__tabs-item--img"><img src="/images/portfolio/portfolio_1.jpg" alt=""></li>
+				<ul id="portfolio__tab-2" class="portfolio__list">
+					<li class="portfolio__item">
+						<div class="portfolio__image portfolio__image-4"></div>
+					</li>
+					<li class="portfolio__item">
+						<div class="portfolio__image portfolio__image-6"></div>
+					</li>
+					<li class="portfolio__item">
+						<div class="portfolio__image portfolio__image-2"></div>
+					</li>
+					<li class="portfolio__item">
+						<div class="portfolio__image portfolio__image-1"></div>
+					</li>
 				</ul>
-				<ul id="portfolio__tab-3" class="portfolio__tabs-item">
-					<li class="portfolio__tabs-item--img"><img src="/images/portfolio/portfolio_6.jpg" alt=""></li>
-					<li class="portfolio__tabs-item--img"><img src="/images/portfolio/portfolio_1.jpg" alt=""></li>
-					<li class="portfolio__tabs-item--img"><img src="/images/portfolio/portfolio_5.jpg" alt=""></li>
-					<li class="portfolio__tabs-item--img"><img src="/images/portfolio/portfolio_2.jpg" alt=""></li>
-					<li class="portfolio__tabs-item--img"><img src="/images/portfolio/portfolio_4.jpg" alt=""></li>
+				<ul id="portfolio__tab-3" class="portfolio__list">
+					<li class="portfolio__item">
+						<div class="portfolio__image portfolio__image-6"></div>
+					</li>
+					<li class="portfolio__item">
+						<div class="portfolio__image portfolio__image-1"></div>
+					</li>
+					<li class="portfolio__item">
+						<div class="portfolio__image portfolio__image-5"></div>
+					</li>
+					<li class="portfolio__item">
+						<div class="portfolio__image portfolio__image-2"></div>
+					</li>
+					<li class="portfolio__item">
+						<div class="portfolio__image portfolio__image-4"></div>
+					</li>
 				</ul>
 			</section>
-			<section class="price">
+			<section id="price__link" class="price">
 				<div class="container">
 					<h2 class="section__title">Price</h2>
-					<ul class="price__list _anim-items">
-						<li class="price__link _anim-show-left">
-							<h3 class="price-title">
-								development
-							</h3>
-							<p class="price-numb"><span>$</span> 150</p>
-							<p class="price-text">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-								the industry's standard dummy text ever since. Lorem Ipsum has been the industry's standard
-								dummy text ever since. Lorem Ipsum is simply dummy text.
-							</p>
+					<ul class="price__list">
+						<li data-aos="fade-right" class="price__list-item">
+							<div class="price__list-inner">
+								<h3 class="price-title">
+									development
+								</h3>
+								<p class="price-numb"><span>$</span> 150</p>
+								<p class="price-text">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+									been
+									the industry's standard dummy text ever since. Lorem Ipsum has been the industry's standard
+									dummy text ever since. Lorem Ipsum is simply dummy text.
+								</p>
+								<a href="#contacts__link" class="galery__button price-btn">заказать проект</a>
+							</div>
 						</li>
-						<li class="price__link _anim-show">
-							<h3 class="price-title">
-								design
-							</h3>
-							<p class="price-numb"><span>$</span> 150</p>
-							<p class="price-text">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-								the industry's standard dummy text ever since. Lorem Ipsum has been the industry's standard
-								dummy text ever since. Lorem Ipsum is simply dummy text.
-							</p>
+						<li data-aos="fade-up" class="price__list-item">
+							<div class="price__list-inner">
+								<h3 class="price-title">
+									design
+								</h3>
+								<p class="price-numb"><span>$</span> 150</p>
+								<p class="price-text">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+									been
+									the industry's standard dummy text ever since. Lorem Ipsum has been the industry's standard
+									dummy text ever since. Lorem Ipsum is simply dummy text.
+								</p>
+								<a href="#contacts__link" class="galery__button price-btn">заказать проект</a>
+							</div>
 						</li>
-						<li class="price__link _anim-show-right">
-							<h3 class="price-title">
-								wordpress
-							</h3>
-							<p class="price-numb"><span>$</span> 150</p>
-							<p class="price-text">
-								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-								the industry's standard dummy text ever since. Lorem Ipsum has been the industry's standard
-								dummy text ever since. Lorem Ipsum is simply dummy text.
-							</p>
+						<li data-aos="fade-left" class="price__list-item">
+							<div class="price__list-inner">
+								<h3 class="price-title">
+									wordpress
+								</h3>
+								<p class="price-numb"><span>$</span> 150</p>
+								<p class="price-text">
+									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+									been
+									the industry's standard dummy text ever since. Lorem Ipsum has been the industry's standard
+									dummy text ever since. Lorem Ipsum is simply dummy text.
+								</p>
+								<a href="#contacts__link" class="galery__button price-btn">заказать проект</a>
+							</div>
 						</li>
 					</ul>
 				</div>
 			</section>
 			<section id="started__link" class="started">
+				<div class="parallax parallax-tb">
+					<img src="images/started/started-bg_min.jpg" alt="img desc">
+				</div>
 				<h2 class="section__title">Eager to get started?</h2>
 				<p class="started-text">
 					Позвольте нам рассказать детали нашего возможного сотрудничества
 				</p>
-				<a href="#contacts__link" class="started-btn header__button"><span>contact us</span></a>
+				<a href="#contacts__link" class="button btn-center"><span>contact us</span></a>
 			</section>
 			<section class="about">
 				<div class="container">
 					<h2 class="section__title">Abou us</h2>
 					<div class="about__row">
-						<div class="about__item">
-							<div class="about__image">
-								<img src="/images/about/about_img-min_2.jpg" alt="">
+						<div data-aos="fade-left" class="about__item">
+							<div class="about__image-wrap">
+								<div class="about__image"></div>
 							</div>
 						</div>
-						<div class="about__item _anim-items">
-							<h3 class="about__item-title _anim-show-right">
+						<div data-aos="fade-left" class="about__item">
+							<h3 class="about__item-title">
 								We're a design studio that believe in the power of ideas.
 							</h3>
-							<p class="about__item-text _anim-show-right">
+							<p class="about__item-text">
 								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
 								the industry's standard dummy text ever since. Lorem Ipsum is simply dummy text of the printing
 								and typesetting industry. Lorem Ipsum has been the industry's standard dummy text Lorem Ipsum
@@ -352,10 +422,13 @@
 					</div>
 				</div>
 			</section>
-			<section class="clients _anim-items">
+			<section class="clients">
 				<div class="container">
+					<div class="parallax parallax-tb">
+						<img src="images/clients/bg.jpg" alt="img desc">
+					</div>
 					<h2 class="section__title">What our clients say</h2>
-					<div class="swiper-container--clients">
+					<div data-aos="zoom-in" class="swiper-container--clients">
 						<div class="swiper-wrapper swiper-wrapper--clients">
 							<div class="swiper-slide swiper-slide--clients">
 								<h3 class="clients-title">
@@ -406,14 +479,20 @@
 				</div>
 				<div class="optimaze-wrap">
 					<div class="container">
-						<ul class="optimaze__image-list _anim-items">
-							<li class="optimaz__image-link _anim-show-left"><img src="/images/optimaze/tab.png" alt=""></li>
-							<li class="optimaz__image-link"><img src="/images/optimaze/pc.png" alt=""></li>
-							<li class="optimaz__image-link _anim-show-right"><img src="/images/optimaze/SP.png" alt=""></li>
+						<ul class="optimaze__image-list">
+							<li data-aos="fade-right" class="optimaz__image-link">
+								<img src="/images/optimaze/tab.png" alt="">
+							</li>
+							<li class="optimaz__image-link">
+								<img src="/images/optimaze/pc.png" alt=""></li>
+							<li data-aos="fade-left" class="optimaz__image-link">
+								<div class="optimaz__image-wrap">
+									<img src="/images/optimaze/SP.png" alt="">
+								</div>
+							</li>
 						</ul>
 					</div>
 				</div>
-
 			</section>
 			<section id="contacts__link" class="contacts">
 				<div class="container">
@@ -421,18 +500,18 @@
 					<p class="contacts-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
 					<form class="form" action="#">
 						<div class="form__line">
-							<label id="name__label" for="name" class="label">Name</label>
+							<label for="name" class="label">Name</label>
 							<input type="text" name="form[]" class="input" id="name" />
 						</div>
 						<div class="form__line">
-							<label id="email__label" for="email" class="label">Email</label>
+							<label for="email" class="label">Email</label>
 							<input type="text" name="form[]" class="input" id="email" />
 						</div>
 						<div class="form__line">
-							<label id="message__label" for="message" class="label">Message</label>
+							<label for="message" class="label">Message</label>
 							<textarea type="text" name="form[]" class="input" id="message"></textarea>
 						</div>
-						<button type="submit" class="form-btn header__button"><span>send a letter</span></button>
+						<button type="submit" class="button btn-center btn-form"><span>send a letter</span></button>
 					</form>
 				</div>
 			</section>

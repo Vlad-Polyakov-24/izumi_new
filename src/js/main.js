@@ -24,16 +24,14 @@ Swiper.use([Navigation, Pagination]);
 /*PROJECT*/
 const swiper = new Swiper('.swiper-container', {
 	slidesPerView: 4,
-	spaceBetween: 10,
 	loop: false,
+	spaceBetween: 10,
 	autoplay: {
 		delay: 500,
-
 	},
 	breakpoints: {
 		375: {
 			slidesPerView: 4,
-			spaceBetween: 20,
 		},
 		768: {
 			slidesPerView: 5,
@@ -104,10 +102,10 @@ $(document).ready(function () {
 		e.preventDefault();
 
 		$('.portfolio__tabs-link').removeClass('portfolio__tabs-link--active');
-		$('.portfolio__tabs-item').removeClass('portfolio__tabs-item--active');
+		$('.portfolio__list').removeClass('portfolio__list--active');
 
 		$(this).addClass('portfolio__tabs-link--active');
-		$($(this).attr('href')).addClass('portfolio__tabs-item--active');
+		$($(this).attr('href')).addClass('portfolio__list--active');
 	});
 
 	$('.portfolio__tabs-link:first').click();
@@ -119,14 +117,8 @@ $(document).ready(function () {
 	});
 	/*=======*/
 
-	/*$("body").on('click', '[href*="#"]', function (e) {
-		var fixed_offset = 0;
-		$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixed_offset }, 1000);
-		e.preventDefault();
-	});*/
-
 	$(document).ready(function () {
-		$("#header__link, #top__link, #started__link").on("click", "a", function (event) {
+		$("#header__link, #top__link, #started__link, #price__link").on("click", "a", function (event) {
 			//отменяем стандартную обработку нажатия по ссылке
 			event.preventDefault();
 
@@ -145,66 +137,75 @@ $(document).ready(function () {
 /*=======*/
 
 /*CONTACTS*/
-document.getElementById('name').oninput = function () {
-	document.getElementById('name__label').classList.add('name__label-active');
-}
+let input = document.querySelectorAll('.input');
+for (let i = 0; i < input.length; i++) {
+	input[i].addEventListener('focus', function () {
 
-document.getElementById('email').oninput = function () {
-	document.getElementById('email__label').classList.add('email__label-active');
-}
+		input[i].parentElement.classList.add('active');
 
-document.getElementById('message').oninput = function () {
-	document.getElementById('message__label').classList.add('message__label-active');
+	});
+	input[i].addEventListener('blur', function () {
+
+		if (input[i].value === '') {
+			input[i].parentElement.classList.remove('active');
+		}
+
+	});
 }
-/*document.getElementById('message').onblur = function () {
-	document.getElementById('message__label').classList.remove('message__label-active');
-}*/
 /*=======*/
 
 /*ANIMATIONS*/
-const animItems = document.querySelectorAll('._anim-items');
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
-if (animItems.length > 0) {
-	window.addEventListener('scroll', animOnScroll);
-	function animOnScroll() {
-		for (let index = 0; index < animItems.length; index++) {
-			const animItem = animItems[index];
-			const animItemHeight = animItem.offsetHeight;
-			const animItemOffset = offset(animItem).top;
-			const animStart = 4;
+AOS.init({
+	// Global settings:
+	disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+	startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+	initClassName: 'aos-init', // class applied after initialization
+	animatedClassName: 'aos-animate', // class applied on animation
+	useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+	disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+	debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+	throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 
-			let animItemPoint = window.innerHeight - animItemHeight / animStart;
 
-			if (animItemHeight > window.innerHeight) {
-				animItemPoint = window.innerHeight - window.innerHeight / animStart;
-			}
+	// Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+	offset: 120, // offset (in px) from the original trigger point
+	delay: 0, // values from 0 to 3000, with step 50ms
+	duration: 600, // values from 0 to 3000, with step 50ms
+	easing: 'ease', // default easing for AOS animations
+	once: false, // whether animation should happen only once - while scrolling down
+	mirror: false, // whether elements should animate out while scrolling past them
+	anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
-			if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
-				animItem.classList.add('_active');
-			} else {
-				if (!animItem.classList.contains('_anim-no-hide')) {
-					animItem.classList.remove('_active');
-				}
-			}
-		}
-	}
-	function offset(el) {
-		const rect = el.getBoundingClientRect(),
-			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-		return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-	}
-
-	setTimeout(() => {
-		animOnScroll();
-	}, 300);
-}
+});
 /*=======*/
 
+/*POPUP*/
 const myModal = new HystModal({
 	linkAttributeName: "data-hystmodal",
 	//настройки, см. API
 });
+/*=======*/
 
+/*PARALAX*/
+function parallax() {
+	let parallax = document.querySelectorAll('.parallax');
 
+	window.addEventListener('scroll', setTransformValue);
+
+	window.addEventListener('load', setTransformValue);
+
+	function setTransformValue() {
+		if (window.innerWidth < 769) return;
+		for (let i = 0; i < parallax.length; i++) {
+			parallax[i].style.transform = `translateY(${-(parallax[i].getBoundingClientRect().top / 2)}px)`;
+		}
+	}
+}
+
+parallax();
+/*=======*/
 
