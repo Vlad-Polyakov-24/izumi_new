@@ -44,20 +44,26 @@ body {
 	background-color: #fff;
 	-webkit-text-size-adjust: 100%;
 
-	font-family: $defFonts;
+	font-family: $montserrat;
 	font-size: 100%;
 	line-height: normal;
 	color: #000;
 }
 /* br fix */
-@include media('>=992px') {
+@include media('>=1100px') {
   .mb{ display: none !important; }
   .pc{ display: block !important; }
 }
-@include media('<=991px') {
+@include media('<=1100px') {
   .mb{ display: block !important; }
   .pc{ display: none !important; }
 }
+@include media('>phone') {
+	.mb-m{ display: none !important; }
+ }
+ @include media('<340px') {
+	.mb-m{ display: none !important; }
+ }
 /* default class */
 .wrapper {
   display: flex;
@@ -75,6 +81,10 @@ body {
   margin: 0 auto;
   padding: 0 $container-p;
   box-sizing: content-box;
+
+  @include media ('<desktop_min') {
+	padding: 0 $container-p+5px;
+  }
 
   &_fluid {
     width: 100%;

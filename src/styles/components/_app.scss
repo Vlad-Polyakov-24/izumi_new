@@ -31,6 +31,15 @@
 	margin-bottom: 30px;
 	position: relative;
 	z-index: 2;
+
+		@include media('<=tb') {
+			font-size: 30px;
+		}
+
+		@include media('<=425px') {
+			margin-bottom: 20px;
+			font-size: 24px;
+		}
 }
 
 .parallax{
@@ -39,9 +48,11 @@
 	top: 0;
 	left: 0;
 	width: 100%;
+
 	 @include media('<=tb') {
 		&-tb {
 			height: 100%;
+			
 			& img {
 				height: 100%;
 				object-fit: cover;
@@ -55,5 +66,143 @@
 	
 }
 
+.title__white {
+	z-index: 2;
+	position: relative;
+	color: #fff;
+	margin-bottom: 31px;
 
+	@include media ('<desktop_min') {
+		margin-bottom: 20px;
+	}
+}
+
+.min-text {
+	font-size: 14px;
+	text-align: center;
+	color: #7D7D7D;
+	font-weight: 400;
+	margin-top: 10px;
+
+	@include media ('<=phone') {
+		font-size: 10px;
+	}
+}
+
+/*SWIPER*/
+	.swiper-container {
+		max-width: 1350px;
+
+			&__clients {
+				position: relative;
+				z-index: 2;
+				max-width: 750px;
+				width: 100%;
+				overflow: hidden;
+				margin: 0 auto;
+				padding-bottom: 35px;
+
+				@include media ('<=phone') {
+					padding-bottom: 19px;
+				}
+			}
+	}
+
+	.swiper-slide {
+		padding-bottom: 5px;
+
+		&__clients {
+			background-color: #fff;
+			border-radius: 20px;
+			padding: 30px;
+
+			h3 {
+				color: #333333;
+				font-size: 16px;
+				text-align: center;
+				margin-bottom: 20px;
+
+				@include media ('<=phone') {
+					margin-bottom: 10px;
+				}
+			}
+
+			p {
+				color: #333333;
+				font-size: 16px;
+				line-height: 28px;
+				text-align: left;
+
+				@include media ('<=phone') {
+					line-height: 26px;
+				} 
+			}
+
+			@include media ('<=phone') {
+				padding: 21px;
+			}
+		}
+
+		@include media ('<=tb') {
+			img {
+				height: 160px;
+			}
+		}
+	}
+
+	.swiper-image {
+		padding-bottom: calc(184 / 160 * 100%);
+		position: relative;
+	}
+
+	.swiper-image-wrap {
+		max-width: 160px;
+		width: 100%;
+
+		img {
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			object-position: 50% 50%;
+			font-family: 'object-fit: cover; object-position: 50% 50%;';
+		}
+	}
+
+	.swiper-pagination {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			left: 50% !important;
+			transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+	}
+
+	.swiper-container-horizontal > .swiper-pagination-bullets {
+			bottom: 0px;
+	}
+
+	.swiper-pagination-bullet {
+			width: 10px;
+			height: 10px;
+			background-color: #7D7D7D;
+			opacity: 1;
+			margin-right: 5px;
+			margin: 0 3px !important;
+
+			&:last-child {
+				margin-right: 0;
+			}
+	}
+
+	.swiper-pagination-bullet-active {
+			width: 14px;
+			height: 14px;
+			background-color: #1C7982;
+			opacity: 1;
+	}
+/*=======*/
 

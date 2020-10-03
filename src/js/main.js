@@ -9,6 +9,18 @@ require('@fancyapps/fancybox/dist/jquery.fancybox.css');
 require('hystmodal/dist/hystmodal.min.css');
 require('hystmodal/dist/hystmodal.min.js');
 
+import Swiper, { Navigation, Pagination } from 'swiper';
+import 'swiper/swiper-bundle.css';
+Swiper.use([Navigation, Pagination]);
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
+import objectFitImages from 'object-fit-images';
+
+
+
 /*HEADER*/
 $(window).scroll(function () {
 	var top = $(document).scrollTop();
@@ -18,9 +30,7 @@ $(window).scroll(function () {
 /*=======*/
 
 /*SWIPER*/
-import Swiper, { Navigation, Pagination } from 'swiper';
-import 'swiper/swiper-bundle.css';
-Swiper.use([Navigation, Pagination]);
+
 /*PROJECT*/
 const swiper = new Swiper('.swiper-container', {
 	slidesPerView: 4,
@@ -44,7 +54,7 @@ const swiper = new Swiper('.swiper-container', {
 /*=======*/
 
 /*CLIENTS*/
-const swiper_2 = new Swiper('.swiper-container--clients', {
+const swiper_2 = new Swiper('.swiper-container__clients', {
 	slidesPerView: 1,
 	loop: true,
 	centeredSlides: true,
@@ -62,40 +72,78 @@ const swiper_2 = new Swiper('.swiper-container--clients', {
 /*=======*/
 
 /*TABS*/
-/*TABS-JS*/
-/*document.querySelectorAll('.tabs__link').forEach((item) =>
-	item.addEventListener('click', function (e) {
-		e.preventDefault();
-		const id = e.target.getAttribute('href').replace('#', '');
-
-		document.querySelectorAll('.tabs__link').forEach(
-			(child) => child.classList.remove('tabs__link-active')
-		);
-		document.querySelectorAll('.tabs__item').forEach(
-			(child) => child.classList.remove('tabs__item-active')
-		);
-
-		item.classList.add('tabs__link-active');
-		document.getElementById(id).classList.add('tabs__item-active');
-	})
-);
-document.querySelector('.tabs__link').click();*/
-/*=======*/
 /*TABS-SERVICES*/
-$(document).ready(function () {
-	$('.tabs__link').click(function (e) {
-		e.preventDefault();
+function servicesTabs() {
+	let btnList = document.getElementsByClassName('tabs__list-btn-item');
+	let contentList = document.getElementsByClassName('tabs__item');
 
-		$('.tabs__link').removeClass('tabs__link-active');
-		$('.tabs__item').removeClass('tabs__item-active');
+	for (let i = 0; i < btnList.length; i++) {
 
-		$(this).addClass('tabs__link-active');
-		$($(this).attr('href')).addClass('tabs__item-active');
-	});
+		function hideTabs() {
+			for (let i = 0; i < contentList.length; i++) {
+				btnList[i].classList.remove('tabs__list-btn-item--active');
+				contentList[i].classList.remove('tabs__item--active');
+			}
+		}
 
-	$('.tabs__link:first').click();
-});
+		function showTabs() {
+			btnList[i].classList.add('tabs__list-btn-item--active');
+			contentList[i].classList.add('tabs__item--active');
+		}
+		for (let i = 0; i < contentList.length; i++) {
+			btnList[i].classList.remove('tabs__list-btn-item--active');
+			contentList[i].classList.remove('tabs__item--active');
+		}
+		btnList[0].classList.add('tabs__list-btn-item--active');
+		contentList[0].classList.add('tabs__item--active');
+		btnList[i].addEventListener('click', (event) => {
+			event.preventDefault();
+			hideTabs();
+			showTabs();
+		});
+
+	}
+}
+
+servicesTabs();
 /*=======*/
+
+/*TABS-PORTFOLIO-JS*/
+/* function portfolioTabs() {
+	let btnPortfolioList = document.getElementsByClassName('portfolio__tabs-link');
+	let contentPortfolioList = document.getElementsByClassName('portfolio__item');
+
+	for (let i = 0; i < btnPortfolioList.length; i++) {
+
+		function hidePortfolioTabs() {
+			for (let i = 0; i < contentPortfolioList.length; i++) {
+				btnPortfolioList[i].classList.remove('portfolio__tabs-link--active');
+				contentPortfolioList[i].classList.remove('portfolio__item--active');
+			}
+		}
+
+		function showPortfolioTabs() {
+			btnPortfolioList[i].classList.add('portfolio__tabs-link--active');
+			contentPortfolioList[i].classList.add('portfolio__item--active');
+		}
+		for (let i = 0; i < contentPortfolioList.length; i++) {
+			btnPortfolioList[i].classList.remove('portfolio__tabs-link--active');
+			contentPortfolioList[i].classList.remove('portfolio__item--active');
+		}
+		btnPortfolioList[0].classList.add('portfolio__tabs-link--active');
+		contentPortfolioList[0].classList.add('portfolio__item--active');
+		btnPortfolioList[i].addEventListener('click', (event) => {
+			event.preventDefault();
+			hidePortfolioTabs();
+			showPortfolioTabs();
+		});
+
+	}
+}
+
+portfolioTabs(); */
+/*=======*/
+
 /*TABS-PORTFOLIO*/
 $(document).ready(function () {
 	$('.portfolio__tabs-link').click(function (e) {
@@ -109,6 +157,7 @@ $(document).ready(function () {
 	});
 
 	$('.portfolio__tabs-link:first').click();
+	/*=======*/
 
 	/*fancy*/
 	$('[data-fancybox="images"]').fancybox({
@@ -117,23 +166,20 @@ $(document).ready(function () {
 	});
 	/*=======*/
 
+	/*SCROLL*/
 	$(document).ready(function () {
-		$("#header__link, #top__link, #started__link, #price__link").on("click", "a", function (event) {
-			//отменяем стандартную обработку нажатия по ссылке
+		$("#header__link, #top__link, #started__link, #price__link, #footer__link").on("click", "a", function (event) {
+
 			event.preventDefault();
 
-			//забираем идентификатор бока с атрибута href
 			var id = $(this).attr('href'),
 
-				//узнаем высоту от начала страницы до блока на который ссылается якорь
 				top = $(id).offset().top;
 
-			//анимируем переход на расстояние - top за 1500 мс
 			$('body,html').animate({ scrollTop: top }, 1500);
 		});
 	});
 });
-/*=======*/
 /*=======*/
 
 /*CONTACTS*/
@@ -155,30 +201,23 @@ for (let i = 0; i < input.length; i++) {
 /*=======*/
 
 /*ANIMATIONS*/
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-AOS.init();
-
 AOS.init({
-	// Global settings:
-	disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-	startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-	initClassName: 'aos-init', // class applied after initialization
-	animatedClassName: 'aos-animate', // class applied on animation
-	useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-	disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-	debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-	throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+	disable: false,
+	startEvent: 'DOMContentLoaded',
+	initClassName: 'aos-init',
+	animatedClassName: 'aos-animate',
+	useClassNames: false,
+	disableMutationObserver: false,
+	debounceDelay: 50,
+	throttleDelay: 99,
 
-
-	// Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-	offset: 120, // offset (in px) from the original trigger point
-	delay: 0, // values from 0 to 3000, with step 50ms
-	duration: 600, // values from 0 to 3000, with step 50ms
-	easing: 'ease', // default easing for AOS animations
-	once: false, // whether animation should happen only once - while scrolling down
-	mirror: false, // whether elements should animate out while scrolling past them
-	anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+	offset: 120,
+	delay: 0,
+	duration: 600,
+	easing: 'ease',
+	once: false,
+	mirror: false,
+	anchorPlacement: 'top-bottom',
 
 });
 /*=======*/
@@ -186,7 +225,6 @@ AOS.init({
 /*POPUP*/
 const myModal = new HystModal({
 	linkAttributeName: "data-hystmodal",
-	//настройки, см. API
 });
 /*=======*/
 
@@ -209,3 +247,4 @@ function parallax() {
 parallax();
 /*=======*/
 
+objectFitImages();

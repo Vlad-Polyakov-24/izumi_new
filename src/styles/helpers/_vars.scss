@@ -6,11 +6,7 @@ $fonts: '../fonts/';
 $images: '../images/';
 
 // fonts
-$JaFonts: 'Noto Sans Japanese', serif;
-$UbFonts: 'Ubuntu', sans-serif;
-
-$defFonts: Monserrat, sans-serif, Hiragino Sans, "ヒラギノ角ゴシック", Hiragino Kaku Gothic ProN, "ヒラギノ角ゴ ProN W3", Roboto, "Droid Sans",
-YuGothic, "游ゴシック", Meiryo, "メイリオ", Verdana, "ＭＳ Ｐゴシック", sans-serif;
+$montserrat: 'Montserrat', sans-serif;
 
 $breakpoints: (
   phone: 375px,

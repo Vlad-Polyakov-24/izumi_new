@@ -13,41 +13,40 @@
 	background-color: rgba(255, 255, 255, 0.5);
 	z-index: 50;
 	transition: all 0.5s ease 0s;
+
+	&.header-scroll {
+		top: 0;
+	}
+
+	&__logo {
+		background-image: url('/images/header/logo.svg');
+		background-position: 50%;
+		background-repeat: no-repeat;
+		background-size: contain;
+		display: block;
+		overflow: hidden;
+		width: 215px;
+		height: 40px;
+		text-indent: -9999px;
+
+		@include media('<=500px') {
+			width: 160px;
+			height: 30px;
+		}
+
+		@include media('<=400px') {
+			width: 140px;
+		}
+	}
+
+	&__logo-link {
+		color: #000;
+		font-size: 18px;
+		display: block;
+		height: 100%;
+	}
+	
 	@include media('<=tb') {
 		height: 60px;
-	}
-}
-.header-scroll {
-	top: 0;
-}
-.header__logo {
-	background: url('/images/header/logo.svg') 50%/contain no-repeat;
-	display: block;
-	overflow: hidden;
-	width: 215px;
-	vertical-align: top;
-	text-indent: -9999px;
-}
-.header__logo-link {
-	color: #000;
-	font-size: 18px;
-}
-
-@media (max-width: 500px) {
-	.header__logo {
-		width: 160px;
-		height: 30px;
-	}
-	.header__button {
-		font-size: 16px;
-	}
-}
-
-@media (max-width: 400px) {
-	.header__logo {
-		width: 140px;
-	}
-	.header__button {
-		font-size: 14px;
 	}
 }
