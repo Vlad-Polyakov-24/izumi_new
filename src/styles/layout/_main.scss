@@ -111,6 +111,8 @@
 	background-color: #E2F0F2;
 	padding-top: 30px;
 	padding-bottom: 40px;
+	display: flex;
+	flex-direction: column;
 
 	&__wrap {
 		max-width: 1370px;
@@ -476,24 +478,6 @@
 			background: linear-gradient(0deg, white -15%, rgba(255, 255, 255, 0.5));
 			width: 100%;
 
-			img {
-				width: 74px;
-				height: 74px;
-				margin: 0 auto;
-				margin-bottom: 20px;
-
-				@include media ('<desktop_min') {
-					width: 68px;
-					height: 68px;
-				}
-
-				@include media ('<=phone') {
-					width: 62px;
-					height: 62px;
-					margin-bottom: 10px;
-				}
-			}
-
 			h3 {
 				color: #333333;
 				text-align: center;
@@ -523,6 +507,31 @@
 
 			@include media ('<=phone') {
 				padding: 20px 10px 19px;
+			}
+		}
+
+		&__img-wrap {
+			width: 74px;
+			height: 74px;
+			margin: 0 auto;
+			margin-bottom: 20px;
+
+			@include media ('<desktop_min') {
+				width: 68px;
+				height: 68px;
+			}
+
+			@include media ('<=phone') {
+				width: 62px;
+				height: 62px;
+				margin-bottom: 10px;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				display: block;
+				border-radius: 50%;
 			}
 		}
 
@@ -1130,6 +1139,7 @@
 			border-bottom: 1px solid #7D7D7D;
 			padding-top: 5px;
 			padding-bottom: 8px;
+			box-shadow: none;
 		}
 
 		textarea.input {
